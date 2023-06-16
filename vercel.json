@@ -1,15 +1,19 @@
 {
-    "version": 1,
+    "version": 2,
+    "name": "kilvidi-ecommerce",
     "builds": [
         {
             "src": "./api/products/index.js",
-            "use": "@now/node"
+            "use": "@vercel/node"
         }
     ],
-    "routes": [
+    "rewrites": [
         {
             "src": "/(.*)",
-            "dest": "index.js"
+            "dest": "/"
         }
-    ]
+    ],
+    {
+        "framework": "nextjs"
+    }
 }

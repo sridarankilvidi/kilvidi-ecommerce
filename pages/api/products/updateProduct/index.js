@@ -14,13 +14,13 @@ export default async function handler(req, res) {
 
         try {
             //dbConnect();
-            const dbproduct = await Product.findById(req.query.id);
             console.log(req.query.id);
+            const dbproduct = await Product.findById(req.query.id);
+            
             if (dbproduct != null) {
                 const product = await Product.findByIdAndUpdate(req.query.id,req.body); 
                 res.status(200).json(product);
-            }
-          
+            }        
 
         } catch (error) {
             console.log(error);
